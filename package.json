@@ -1,23 +1,12 @@
 {
-  "name": "gemini-gmigen",
+  "name": "Aries",
   "version": "1.0.0",
-  "main": "index.ts",
-  "repository": "https://github.com/kiosion/gemini-gmigen",
+  "main": "app.ts",
+  "repository": "https://github.com/kiosion/Aries",
   "author": "kio",
-  "license": "none",
   "dependencies": {
-    "@types/express": "^4.17.13",
-    "@types/node": "^17.0.42",
-    "concurrently": "^7.2.1",
-    "dotenv": "^16.0.1",
-    "express": "^4.18.1",
-    "nodemon": "^2.0.16",
-    "ts-node": "^10.8.1",
-    "typescript": "^4.7.3"
-  },
-  "scripts": {
-    "build": "tsc",
-    "serve": "node ./dist/index.js",
-    "dev": "concurrently \"yarn tsc --watch\" \"nodemon -q ./dist/index.js\""
+    "@sanity/asset-utils": "^1.2.3",
+    "@sanity/client": "^3.3.2",
+    "@sanity/image-url": "^1.0.1"
   }
 }

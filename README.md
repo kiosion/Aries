@@ -1,2 +1,2 @@
-# gemini-gmigen
-Node app for generating gmi pages on-the-fly for a gemini instance of my portfolio &amp; blog.
+# Aries
+Deno app for generating & serving gmi pages on-the-fly for a gemini instance of my portfolio &amp; blog.
