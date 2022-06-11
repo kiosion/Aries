@@ -15,7 +15,7 @@ const app = new Application({
 
 app.use(handleRoutes(
   new Route('/test', async (ctx) => {
-    ctx.response.body = pageBuilder(
+    ctx.response.body = await pageBuilder(
       'Test page', 
       [ 'Some one-line test content', 'Another line of test content' ]
     );
