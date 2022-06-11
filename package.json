@@ -4,9 +4,15 @@
   "main": "app.ts",
   "repository": "https://github.com/kiosion/Aries",
   "author": "kio",
+  "license": "n/a",
   "dependencies": {
     "@sanity/asset-utils": "^1.2.3",
     "@sanity/client": "^3.3.2",
-    "@sanity/image-url": "^1.0.1"
+    "@sanity/image-url": "^1.0.1",
+    "watch": "^1.0.2"
+  },
+  "scripts": {
+    "serve": "deno run --allow-net --allow-read --allow-env --unstable ./app.ts",
+    "dev": "yarn watch 'yarn run serve'"
   }
 }

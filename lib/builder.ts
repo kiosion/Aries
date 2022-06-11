@@ -11,29 +11,32 @@ import {
 export const buildPage: any = (title: string, body: string[]): Promise<any> => new Promise (async (resolve, reject) => {
   let content = new Gemtext(
     new LineHeading(`${title} - kio.dev`, 1),
-    new LineText(),
   );
   
-  const navFile = await Deno.readTextFile("./templates/nav.gmi");
+  const navFile = await Deno.readTextFile('./templates/nav.gmi');
   
   let nav = new Gemtext();
-
+  
   for (let i = 0; i < navFile.split('\n').length; i++) {
     nav.append(new LineText(navFile.split('\n')[i]));
   }
-
+  
   content.append(nav);
-
+  
   for (let i = 0; i < body.length; i++) {
     content.append(new LineText(body[i]));
   }
+  
+  let footerFile = await Deno.readTextFile('./templates/footer.gmi');
+  
+  let footer = new Gemtext();
+  
+  for (let i = 0; i < footerFile.split('\n').length; i++) {
+    footer.append(new LineText(footerFile.split('\n')[i]));
+  }
 
-  content.append(
-    new LineText(),
-    new LineText('~~~~~~~~~'),
-    new LineText('copyright 2022 kiosion'),
-  );
-
+  content.append(footer);
+  
   resolve(content);
 });
 

@@ -25,10 +25,10 @@ app.use(handleRoutes(
       'id = ' + ctx.pathParams.id;
   }),
   new Route('/', async (ctx) => {
-    ctx.response.body = '# Home - kio.dev\r\n' +
-      '=> /test Test page served by other route\r\n' +
-      '=> /param/7 Parametrized page, where id=7\r\n' +
-      '=> /404 No routes matched';
+    ctx.response.body = await pageBuilder(
+      'Home',
+      ['Blank for now :)']
+    );
   }),
 ));
 
