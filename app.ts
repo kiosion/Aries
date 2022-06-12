@@ -20,14 +20,43 @@ app.use(handleRoutes(
       [ 'Some one-line test content', 'Another line of test content' ]
     );
   }),
-  new Route<{id?: string}>('/param/:id', async (ctx) => {
-    ctx.response.body = '# Parametrized page\r\n' +
-      'id = ' + ctx.pathParams.id;
+  new Route<{slug?: string}>('/post/:slug', async (ctx) => {
+    // Need to add some logic here; check if slug exists as a page
+    // already under /static/posts, if so, serve content from that.
+    // Otherwise, implement 'fetch.ts' and write to file for
+    // future use.
+
+    ctx.response.body = await pageBuilder(
+      'Parametrized page',
+      [ 'page slug: ' + ctx.pathParams.slug ]
+    );
+  }),
+  new Route('/blog', async (ctx) => {
+    // Need to fetch static header/desc, then append list fetched
+    // from Sanity.io, using 'fetch.ts' util. Same for title.
+
+    // const blog = await Deno.readTextFile('./static/blog.gmi');
+    
+    // Filler text for now
+    ctx.response.body = await pageBuilder(
+      'Blog posts',
+      [ 'To-do, check back later :)', '## Recent', '', '## All posts', 'Page 1 of 11', '', '=> /blog Prev', '=> /blog/2 Next' ]
+    );
+  }),
+  new Route('/pub.gpg', async (ctx) => {
+    const gpg = await Deno.readTextFile('./static/gpg.gmi');
+
+    ctx.response.body = await pageBuilder(
+      'GPG',
+      gpg.split('\n'),
+    );
   }),
   new Route('/', async (ctx) => {
+    const index = await Deno.readTextFile('./static/index.gmi');
+
     ctx.response.body = await pageBuilder(
       'Home',
-      ['Blank for now :)']
+      index.split('\n'),
     );
   }),
 ));

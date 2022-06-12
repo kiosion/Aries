@@ -1,0 +1,32 @@
+Hi, I'm Maxim (or Kio) - a digital artist, developer, and tech nerd based in Canada. 
+
+I do full-stack development, mostly focusing on web-based applications, but also enjoy working on back-end things and learning new languages, currently Rust.
+
+## Projects
+I've worked on a variety of projects, in a bunch of different languages. Here are some of favourites!
+
+=> https://github.com/kiosion/Amethyst Amethyst, a dark/minimal rework of Discord's UI
+=> https://github.com/kiosion/Aries Aries, the gemeni webserver behind this site!
+=> https://github.com/kiosion/minBin minBin, a private + minimal alternative to pasteBin, written in TS
+=> https://github.com/kiosion/Toru Toru, an API for generating image embeds of last.fm user activity
+=> https://github.com/kiosion/Zen Zen, a browser-based, irc-inspired chat app
+
+## Guides
+I also enjoy writing guides about projects or tricky things I've undertaken.
+
+=> /post/using-a-yubikey-for-ssh-authentication Using a Yubikey for SSH authentication
+=> /post/finding-a-solid-offsite-backup-solution Finding a solid off-site backup solution
+
+## Contact
+Want to say hi, or shoot me a quick email?
+
+=> https://mstdn.social/@kio mastodon
+=> https://keybase.io/kiosion keybase
+=> https://discord.gg/kio discord
+=> https://twitter.com/0xKI0 twitter
+=> mailto:hi@kio.dev email
+
+## GPG
+If you're sending a message over discord/twitter, maybe take advantage of this :)
+
+=> /pub.gpg public gpg
