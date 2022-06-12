@@ -6,7 +6,7 @@ I do full-stack development, mostly focusing on web-based applications, but also
 I've worked on a variety of projects, in a bunch of different languages. Here are some of favourites!
 
 => https://github.com/kiosion/Amethyst Amethyst, a dark/minimal rework of Discord's UI
-=> https://github.com/kiosion/Aries Aries, the gemeni webserver behind this site!
+=> https://github.com/kiosion/Aries Aries, the gemini webserver behind this site!
 => https://github.com/kiosion/minBin minBin, a private + minimal alternative to pasteBin, written in TS
 => https://github.com/kiosion/Toru Toru, an API for generating image embeds of last.fm user activity
 => https://github.com/kiosion/Zen Zen, a browser-based, irc-inspired chat app

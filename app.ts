@@ -40,7 +40,18 @@ app.use(handleRoutes(
     // Filler text for now
     ctx.response.body = await pageBuilder(
       'Blog posts',
-      [ 'To-do, check back later :)', '## Recent', '', '## All posts', 'Page 1 of 11', '', '=> /blog Prev', '=> /blog/2 Next' ]
+      [ 'To-do, check back later :)', '## Recent', '', '## All posts', 'Page 1 of ?', '', '=> /blog Prev', '=> /blog/2 Next' ]
+    );
+  }),
+  new Route<{page?: string}>('/blog/:page', async (ctx) => {
+    // For pagination of 'all pots' section on blog page
+    // Also to-do :)
+    
+    const pageNum: number = (ctx?.pathParams?.page && +ctx?.pathParams?.page > 1) ? +ctx?.pathParams?.page : 1;
+
+    ctx.response.body = await pageBuilder(
+      'Blog posts',
+      [ 'To-do, check back later :)', '## Recent', '', '## All posts', 'Page ' + pageNum + ' of ?', '', '=> /blog/' + ((pageNum - 1) > 1 ? pageNum - 1 : 1) + ' Prev', '=> /blog/' + (pageNum + 1) + ' Next']
     );
   }),
   new Route('/pub.gpg', async (ctx) => {
