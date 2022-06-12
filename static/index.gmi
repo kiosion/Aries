@@ -3,7 +3,7 @@ Hi, I'm Maxim (or Kio) - a digital artist, developer, and tech nerd based in Can
 I do full-stack development, mostly focusing on web-based applications, but also enjoy working on back-end things and learning new languages, currently Rust.
 
 ## Projects
-I've worked on a variety of projects, in a bunch of different languages. Here are some of favourites!
+I've worked on a variety of projects, in a bunch of different languages. Here are some favourites!
 
 => https://github.com/kiosion/Amethyst Amethyst, a dark/minimal rework of Discord's UI
 => https://github.com/kiosion/Aries Aries, the gemini webserver behind this site!

@@ -5,9 +5,10 @@ const sanityClient = require('@sanity/client');
 const imageBuilder = require('@sanity/image-url');
 
 export const client = sanityClient({
-  projectId: Deno.env.get("SANITY_PROJECT_ID"),
+  projectId: Deno.env.get('SANITY_PROJECT_ID'),
   dataset: 'production',
   apiVersion: '2022-05-04',
+  token: Deno.env.get('SANITY_PROJECT_TOKEN'),
   useCdn: true,
 });
 
