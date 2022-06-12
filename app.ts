@@ -4,8 +4,6 @@ import {
   Route
 } from 'https://deno.land/x/kaksik/mod.ts';
 import 'https://deno.land/x/dotenv/load.ts';
-
-import { client as sanityClient, urlFor as sanityUrlFor } from './lib/client.ts';
 import { buildPage as pageBuilder } from './lib/builder.ts';
 
 const app = new Application({
@@ -14,12 +12,6 @@ const app = new Application({
 });
 
 app.use(handleRoutes(
-  new Route('/test', async (ctx) => {
-    ctx.response.body = await pageBuilder(
-      'Test page', 
-      [ 'Some one-line test content', 'Another line of test content' ]
-    );
-  }),
   new Route<{slug?: string}>('/post/:slug', async (ctx) => {
     // Need to add some logic here; check if slug exists as a page
     // already under /static/posts, if so, serve content from that.
@@ -55,19 +47,21 @@ app.use(handleRoutes(
     );
   }),
   new Route('/pub.gpg', async (ctx) => {
-    const gpg = await Deno.readTextFile('./static/gpg.gmi');
-
     ctx.response.body = await pageBuilder(
       'GPG',
-      gpg.split('\n'),
+      await Deno.readTextFile('./static/gpg.gmi')
+        .then((file) => {
+          return file.split('\n');
+        }),
     );
   }),
   new Route('/', async (ctx) => {
-    const index = await Deno.readTextFile('./static/index.gmi');
-
     ctx.response.body = await pageBuilder(
       'Home',
-      index.split('\n'),
+      await Deno.readTextFile('./static/index.gmi')
+        .then((file) => {
+          return file.split('\n');
+        }),
     );
   }),
 ));
@@ -75,7 +69,7 @@ app.use(handleRoutes(
 app.use(async ctx => {
   ctx.response.body = await pageBuilder(
     'Error 404',
-    ['', 'No routes matched :(', '', '=> / return home']
+    ['No routes matched :(', '', '=> / return home']
   );
 });
 
