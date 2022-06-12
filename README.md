@@ -1,10 +1,10 @@
 <div align=center>
   <h1>Aries</h1>
+  
   <p>Deno app to serve gmi pages on-the-fly for a gemini instance of my portfolio &amp; blog</p>
+  
+  <img src=".github/img/ss.png" alt="Screenshot of index page" width="650" />
 </div>
-
-## About
-
 
 ## Usage
 In order to run locally, you'll need SSL certs. You can generate self-signed ones using the `openssl` command.
