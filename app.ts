@@ -32,9 +32,11 @@ app.use(handleRoutes(
   }),
 ));
 
-app.use(ctx => {
-  ctx.response.body = '# Error 404\r\n' + 
-    'No routes matched :(';
+app.use(async ctx => {
+  ctx.response.body = await pageBuilder(
+    'Error 404',
+    ['', 'No routes matched :(', '', '=> / return home']
+  );
 });
 
 await app.start();

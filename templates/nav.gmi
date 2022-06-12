@@ -1,7 +1,6 @@
 
-~~~
+### ~~~
 => / home
 => /about about
 => /blog blog posts
-~~~
 
