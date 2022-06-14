@@ -66,7 +66,7 @@ export const runQuery = async (
   callback: (json: any[]) => void
 ) => {
   const client = sanityClient({
-    ...sanityCredentials,
+    ...sanityCreds,
     useCdn: false,
     apiVersion: '2021-05-04'
   });
@@ -74,6 +74,6 @@ export const runQuery = async (
 };
 
 export const urlFor = (source: any) => {
-  imageURLBuilder(sanityCredentials).image(source);
+  imageURLBuilder(sanityCreds).image(source);
 };
 
