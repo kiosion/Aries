@@ -1,4 +1,4 @@
-import { client as sanityClient } from './lib/client.ts';
+import { client as sanityClient } from './client.ts';
 
 module fetch {
   export const post = (urlSlug: string): Promise<any> => new Promise ((resolve, reject) => {
@@ -8,7 +8,7 @@ module fetch {
     sanityClient.fetch(query)
       .then((data: any) => {
         console.log('Returned post(s):');
-        data.forEach((post) => {
+        data.forEach((post: any) => {
           console.log(post);
         });
       });

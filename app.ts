@@ -5,6 +5,7 @@ import {
 } from 'https://deno.land/x/kaksik/mod.ts';
 import 'https://deno.land/x/dotenv/load.ts';
 import { buildPage as pageBuilder } from './lib/builder.ts';
+import fetch from './lib/fetch.ts';
 
 const app = new Application({
   keyFile: './key.pem',
@@ -28,6 +29,13 @@ app.use(handleRoutes(
     // from Sanity.io, using 'fetch.ts' util. Same for title.
 
     // const blog = await Deno.readTextFile('./static/blog.gmi');
+    const allPostsRes = await fetch.posts()
+      .then((posts) => {
+        console.log(posts);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
     
     // Filler text for now
     ctx.response.body = await pageBuilder(
